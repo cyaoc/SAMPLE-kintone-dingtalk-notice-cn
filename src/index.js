@@ -14,12 +14,12 @@ const get = (event, field) => {
   return v
 }
 
-kintone.events.on('app.record.detail.process.proceed', (event) => {
+kintone.events.on(['mobile.app.record.detail.process.proceed', 'app.record.detail.process.proceed'], (event) => {
   option.next = true
   option.status = event.status.value
   return event
 })
-kintone.events.on('app.record.detail.show', (event) => {
+kintone.events.on(['mobile.app.record.detail.show', 'app.record.detail.show'], (event) => {
   if (option.next) {
     option.next = false
     const status = get(event, 'status')
@@ -34,7 +34,7 @@ kintone.events.on('app.record.detail.show', (event) => {
           { 'Content-type': 'application/json' },
           {
             domain: window.location.host,
-            app: kintone.app.getId(),
+            app: kintone.app.getId() || kintone.mobile.app.getId(),
             id: event.record.$id.value,
             title: document.title,
             users,
