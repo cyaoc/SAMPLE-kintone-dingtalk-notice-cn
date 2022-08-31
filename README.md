@@ -2,7 +2,6 @@
 将kintone流程管理的审批人推送给服务端。
 
 # 效果
-通知
 ![通知](https://raw.githubusercontent.com/cyaoc/cn-idp/master/screenshots/notify.gif)
 
 # 安装
