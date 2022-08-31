@@ -1,4 +1,4 @@
-# Process2Ding
+# SAMPLE-kintone-dingtalk-notice-cn
 将kintone流程管理的审批人推送给服务端。
 
 # 效果
